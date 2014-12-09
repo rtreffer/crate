@@ -256,3 +256,21 @@ Or get an overview of how many routines and routine types are available::
     |       54 | TOKEN_FILTER |
     +----------+--------------+
     SELECT 4 rows in set (... sec)
+
+Schemata
+========
+
+The schemata table lists all existing schemas. A schema exists as long as there
+are tables within that schema. They are implicitly created using the
+:ref:`ref-create-table` command. There are three schemas that are always available:
+``blob``, ``doc`` and ``information_schema``::
+
+    cr> select schema_name from information_schema.schemata order by schema_name;
+    +--------------------+
+    | schema_name        |
+    +--------------------+
+    | blob               |
+    | doc                |
+    | information_schema |
+    +--------------------+
+    SELECT 3 rows in set (... sec)
